@@ -1,21 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class zombie here.
+ * Write a description of class pea here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class zombie extends Actor
+public class pea extends Actor
 {
     /**
-     * Act - do whatever the zombie wants to do. This method is called whenever
+     * Act - do whatever the pea wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act()
     {
-        setLocation(getX()-1, getY());
+        setLocation(getX()+5, getY());
     }
-    
-    
 }

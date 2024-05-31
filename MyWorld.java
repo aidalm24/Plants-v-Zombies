@@ -41,14 +41,18 @@ public class MyWorld extends World
     
     public void act()
     {
-        if (Greenfoot.getRandomNumber(100) < 3)
+        if (Greenfoot.getRandomNumber(100) < 1)
         {
             zombie z = new zombie();
             z.getImage().scale(60, 80);
         
-            if(Greenfoot.getRandomNumber(100) < 80){
-                addObject(z, 580, Greenfoot.getRandomNumber(400));
-            }
+            addObject(z, 580, Greenfoot.getRandomNumber(400));
+        }
+        
+        if (Greenfoot.isKeyDown("space")) {
+            pea p = new pea();
+            p.getImage().scale(20, 20);
+            addObject(p, 50, 200);
         }
     }
     
