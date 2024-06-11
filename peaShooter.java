@@ -18,6 +18,9 @@ public class peaShooter extends Actor
     {
         reloadDelay++;
         weapon();
+        /**
+         * Hi
+         */
     }
     public void weapon(){
         if(reloadDelay>=reloadTime){
