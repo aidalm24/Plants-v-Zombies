@@ -31,7 +31,10 @@ public class MyWorld extends World
         p1.getImage().scale(58, 58);
         addObject(p1, 90, 340);
         
-        
+        // Cards
+        litSunflower sc = new litSunflower();
+        sc.getImage().scale(55, 70);
+        addObject(sc, 100, 27);
     }
     
     public void act()
@@ -43,13 +46,21 @@ public class MyWorld extends World
         
             addObject(z, 580, Greenfoot.getRandomNumber(4)*80+100);
         }
+        
+        if (Greenfoot.getRandomNumber(300) < 1){
+            sun s = new sun();
+            s.getImage().scale(60, 60);
+            addObject(s, Greenfoot.getRandomNumber(600), 20);
+        }
     }
     
     public void addScore(int points){
         score = score + points;
         showScore();
     }
-    
+    public int getScore(){
+        return score;
+    }
     private void showScore(){
         showText("" + score, 30, 55);
     }
