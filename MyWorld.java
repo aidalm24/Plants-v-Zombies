@@ -29,30 +29,19 @@ public class MyWorld extends World
         
         peaShooter p1 = new peaShooter();
         p1.getImage().scale(58, 58);
-        addObject(p1, 50, 200);
+        addObject(p1, 90, 340);
         
-        zombie z = new zombie();
-        z.getImage().scale(60, 80);
         
-        if(Greenfoot.getRandomNumber(100) < 80){
-            addObject(z, 580, Greenfoot.getRandomNumber(400));
-        }
     }
     
     public void act()
     {
-        if (Greenfoot.getRandomNumber(100) < 1)
+        if (Greenfoot.getRandomNumber(500) < 1)
         {
             zombie z = new zombie();
             z.getImage().scale(60, 80);
         
-            addObject(z, 580, Greenfoot.getRandomNumber(400));
-        }
-        
-        if (Greenfoot.isKeyDown("space")) {
-            pea p = new pea();
-            p.getImage().scale(20, 20);
-            addObject(p, 50, 200);
+            addObject(z, 580, Greenfoot.getRandomNumber(4)*80+100);
         }
     }
     
@@ -62,7 +51,7 @@ public class MyWorld extends World
     }
     
     private void showScore(){
-        showText("Score: " + score, 80, 25);
+        showText("" + score, 30, 55);
     }
     
     private void showWave(){
