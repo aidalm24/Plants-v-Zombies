@@ -16,6 +16,7 @@ public class zombie extends Actor
     public void act()
     {
         setLocation(getX()-1, getY());
+        
         if(isTouching(pea.class)){
             removeTouching(pea.class);
             health--;
@@ -23,7 +24,9 @@ public class zombie extends Actor
         if(health==0){
             getWorld().removeObject(this);
         }
+        if(isAtEdge())  {
+            Greenfoot.setWorld(new GameOverScreen());
+        }
     }
-    
-    
 }
+    

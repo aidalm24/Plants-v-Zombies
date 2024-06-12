@@ -64,6 +64,10 @@ public class MyWorld extends World
             s.getImage().scale(60, 60);
             addObject(s, Greenfoot.getRandomNumber(600), 20);
         }
+        
+        if (wave == 10) {
+            Greenfoot.setWorld(new VictoryScreen());
+        }
     }
     
     public void addScore(int points){
