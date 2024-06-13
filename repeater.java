@@ -1,20 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class peaShooter here.
+ * Write a description of class repeater here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class peaShooter extends Actor
+public class repeater extends Actor
 {
     /**
-     * Act - do whatever the peaShooter wants to do. This method is called whenever
+     * Act - do whatever the repeater wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int reloadTime=40;
+    private int reloadTime=20;
     private int reloadDelay;
-    private int health=5;
+    private int health=6;
     private int zombieTime=21;
     private int zombieCooldown=20;
     public void act()

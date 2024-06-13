@@ -14,11 +14,11 @@ public class sunFlower extends Actor
      */
     MyWorld world = (MyWorld)getWorld();
     private int health=5;
-    private int zombieTime=51;
-    private int zombieCooldown=50;
+    private int zombieTime=21;
+    private int zombieCooldown=20;
     public void act()
     {
-        if(Greenfoot.getRandomNumber(800)<1){
+        if(Greenfoot.getRandomNumber(200)<1){
             sun s = new sun();
             s.getImage().scale(60, 60);
             getWorld().addObject(s, getX(), getY());

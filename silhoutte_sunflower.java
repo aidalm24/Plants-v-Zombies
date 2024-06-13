@@ -26,7 +26,7 @@ public class silhoutte_sunflower extends Actor
         }
         // moving
         turnTowards(mseX, mseY);
-        move(10);
+        move(30);
         setRotation(0);
         if(mseBtnDown){
             getWorld().removeObject(this);
