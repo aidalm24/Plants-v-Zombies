@@ -13,10 +13,11 @@ public class litSunflower extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     private int time=1001;
+    private int cooldown=1000;
     public void act()
     {
         MyWorld world = (MyWorld)getWorld();
-        if(Greenfoot.mouseClicked(this)){
+        if(Greenfoot.mouseClicked(this)&&world.getScore()>=50&&cooldown > 1000){
             
             world.addScore(-50);
             GreenfootImage img = new GreenfootImage("greysun.png");
@@ -26,7 +27,7 @@ public class litSunflower extends Actor
         }
         
         
-        if(time > 1000 && world.getScore()>=50){
+        if(time > cooldown && world.getScore()>=50){
                     GreenfootImage imag = new GreenfootImage("brightsun.png");
                     imag.scale(imag.getWidth()/10, imag.getHeight()/11);
                     setImage(imag);
