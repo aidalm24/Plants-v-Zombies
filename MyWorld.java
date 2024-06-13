@@ -31,7 +31,6 @@ public class MyWorld extends World
         p1.getImage().scale(58, 58);
         addObject(p1, 35, 245);
         
-<<<<<<< HEAD
         // Cards
         litSunflower sc = new litSunflower();
         sc.getImage().scale(55, 70);
@@ -39,9 +38,6 @@ public class MyWorld extends World
         litPeashooter pc = new litPeashooter();
         pc.getImage().scale(55, 70);
         addObject(pc, 160, 27);
-=======
-        
->>>>>>> parent of fe43f14 (sun, card, background, mechanics)
     }
     
     public void act()
@@ -62,13 +58,25 @@ public class MyWorld extends World
                 addObject(z, 580, 345);
             }
         }
+        
+        if (Greenfoot.getRandomNumber(300) < 1){
+            sun s = new sun();
+            s.getImage().scale(60, 60);
+            addObject(s, Greenfoot.getRandomNumber(600), 20);
+        }
+        
+        if (wave == 10) {
+            Greenfoot.setWorld(new VictoryScreen());
+        }
     }
     
     public void addScore(int points){
         score = score + points;
         showScore();
     }
-    
+    public int getScore(){
+        return score;
+    }
     private void showScore(){
         showText("" + score, 30, 55);
     }
