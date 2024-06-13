@@ -12,15 +12,23 @@ public class peaShooter extends Actor
      * Act - do whatever the peaShooter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int reloadTime=35;
+    private int reloadTime=80;
     private int reloadDelay;
+    private int health=5;
+    private int zombieTime=51;
+    private int zombieCooldown=50;
     public void act()
     {
         reloadDelay++;
         weapon();
-        /**
-         * Hi
-         */
+        zombieTime++;
+        if(isTouching(zombie.class)&&zombieTime>zombieCooldown){
+            health--;
+            zombieTime=0;
+        }
+        if(health==0){
+            getWorld().removeObject(this);
+        }
     }
     public void weapon(){
         if(reloadDelay>=reloadTime){

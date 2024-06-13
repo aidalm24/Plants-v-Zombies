@@ -19,8 +19,8 @@ public class pea extends Actor
     }
     public void act()
     {
-        setLocation(getX()+3, getY());
-        if(getX()==594){
+        setLocation(getX()+7, getY());
+        if(getX()>595){
             getWorld().removeObject(this);
         }
     }

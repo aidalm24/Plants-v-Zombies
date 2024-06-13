@@ -17,12 +17,16 @@ public class litSunflower extends Actor
     public void act()
     {
         MyWorld world = (MyWorld)getWorld();
-        if(Greenfoot.mouseClicked(this)&&world.getScore()>=50&&cooldown > 1000){
+        if(Greenfoot.mouseClicked(this)&&world.getScore()>=50&&time>cooldown){
             
             world.addScore(-50);
             GreenfootImage img = new GreenfootImage("greysun.png");
             img.scale(img.getWidth()/10, img.getHeight()/11);
             setImage(img);
+            silhoutte_sunflower s = new silhoutte_sunflower();
+            s.getImage().scale(50,50);
+            getWorld().addObject(s,getX(),getY());
+            world.setSunflower(true);
             time=0;
         }
         

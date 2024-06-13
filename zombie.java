@@ -15,7 +15,9 @@ public class zombie extends Actor
     private int health=5;
     public void act()
     {
-        setLocation(getX()-1, getY());
+        if(!(isTouching(sunFlower.class)||isTouching(peaShooter.class))){
+            setLocation(getX()-1, getY());
+        }
         if(isTouching(pea.class)){
             removeTouching(pea.class);
             health--;
