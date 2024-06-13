@@ -12,7 +12,7 @@ public class repeater extends Actor
      * Act - do whatever the repeater wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int reloadTime=20;
+    private int reloadTime=25;
     private int reloadDelay;
     private int health=6;
     private int zombieTime=21;

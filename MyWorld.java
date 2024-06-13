@@ -16,22 +16,23 @@ public class MyWorld extends World
     
     private int score;
     private int wave;
-    private int initialCooldown=800;
+    private int initialCooldown=1000;
     private int time=0;
     private boolean putSunflower=false;
     private boolean putPeashooter = false;
     private boolean putNut = false;
     private boolean putRepeater = false;
-    private int zombieCount = 0;
+    private int zombieCount;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        score = 0;
+        score = 50;
         wave = 0;
         showScore();
         showWave();
+        zombieCount=0;
         
         
         
@@ -59,7 +60,8 @@ public class MyWorld extends World
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
         time++;
-        if (time>initialCooldown&&Greenfoot.getRandomNumber(100-30*wave) < 1)
+        showWave();
+        if (time>initialCooldown&&Greenfoot.getRandomNumber(150-40*wave) < 1)
         {
             zombie z = new zombie();
             z.getImage().scale(60, 80);
@@ -67,8 +69,24 @@ public class MyWorld extends World
             addObject(z, 580, Greenfoot.getRandomNumber(4)*80+100);
             zombieCount++;
         }
+        if (wave>0&&Greenfoot.getRandomNumber(200-40*wave) < 1)
+        {
+            coneZombie cz = new coneZombie();
+            cz.getImage().scale(60, 80);
         
-        if (Greenfoot.getRandomNumber(150) < 1){
+            addObject(cz, 580, Greenfoot.getRandomNumber(4)*80+100);
+            zombieCount++;
+        }
+        if (wave>0&&Greenfoot.getRandomNumber(200) < 1)
+        {
+            footballZombie fz = new footballZombie();
+            fz.getImage().scale(90, 90);
+        
+            addObject(fz, 580, Greenfoot.getRandomNumber(4)*80+100);
+            zombieCount++;
+        }
+        
+        if (wave>1&&Greenfoot.getRandomNumber(200) < 1){
             sun s = new sun();
             s.getImage().scale(60, 60);
             addObject(s, Greenfoot.getRandomNumber(600), 20);
@@ -102,7 +120,7 @@ public class MyWorld extends World
                 int newY = (mouse.getY()-60)/80;
                 
                 nut n = new nut();
-                n.getImage().scale(70,75);
+                n.getImage().scale(65,70);
                 addObject(n,80+newX*70,95+newY*83);
                 putNut=false;
             }
@@ -118,7 +136,7 @@ public class MyWorld extends World
                 putRepeater=false;
             }
         }
-        if(zombieCount==(wave+1)*10){
+        if(zombieCount>=(wave+1)*10){
             wave++;
             zombieCount=0;
         }

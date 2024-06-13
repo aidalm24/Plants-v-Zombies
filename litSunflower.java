@@ -36,7 +36,7 @@ public class litSunflower extends Actor
         }
         
         if(world.getScore()<50){
-            GreenfootImage i = new GreenfootImage("greySunflower.png");
+            GreenfootImage i = new GreenfootImage("greysun.png");
             i.scale(55, 70);
             setImage(i);
         }

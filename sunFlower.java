@@ -18,6 +18,7 @@ public class sunFlower extends Actor
     private int zombieCooldown=20;
     public void act()
     {
+        zombieTime++;
         if(Greenfoot.getRandomNumber(200)<1){
             sun s = new sun();
             s.getImage().scale(60, 60);

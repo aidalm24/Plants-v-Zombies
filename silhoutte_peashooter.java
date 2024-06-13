@@ -26,7 +26,7 @@ public class silhoutte_peashooter extends Actor
         }
         // moving
         turnTowards(mseX, mseY);
-        move(30);
+        move(20);
         setRotation(0);
         if(mseBtnDown){
             getWorld().removeObject(this);

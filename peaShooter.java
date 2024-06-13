@@ -12,13 +12,14 @@ public class peaShooter extends Actor
      * Act - do whatever the peaShooter wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int reloadTime=40;
+    private int reloadTime=50;
     private int reloadDelay;
     private int health=5;
     private int zombieTime=21;
     private int zombieCooldown=20;
     public void act()
     {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
         reloadDelay++;
         weapon();
         zombieTime++;
