@@ -31,7 +31,7 @@ public class zombie extends Actor
         }
         
         if(health==0){
-            world.increaseKill(1);
+            
             getWorld().removeObject(this);
         }
         

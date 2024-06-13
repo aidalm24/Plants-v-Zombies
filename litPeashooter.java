@@ -17,6 +17,11 @@ public class litPeashooter extends Actor
     public void act()
     {
         MyWorld world = (MyWorld)getWorld();
+        if(world.getScore()<100){
+            GreenfootImage i = new GreenfootImage("greyPeashooter.png");
+            i.scale(55, 70);
+            setImage(i);
+        }
         if(Greenfoot.mouseClicked(this)&&world.getScore()>=100&&time>cooldown){
             
             world.addScore(-100);

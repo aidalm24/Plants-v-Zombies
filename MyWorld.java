@@ -22,17 +22,17 @@ public class MyWorld extends World
     private boolean putPeashooter = false;
     private boolean putNut = false;
     private boolean putRepeater = false;
-    private int kd = 0;
+    private int zombieCount = 0;
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         
-        score = 500;
+        score = 0;
         wave = 0;
         showScore();
         showWave();
-        showKD();
+        
         
         
         
@@ -65,9 +65,10 @@ public class MyWorld extends World
             z.getImage().scale(60, 80);
         
             addObject(z, 580, Greenfoot.getRandomNumber(4)*80+100);
+            zombieCount++;
         }
         
-        if (Greenfoot.getRandomNumber(250) < 1){
+        if (Greenfoot.getRandomNumber(150) < 1){
             sun s = new sun();
             s.getImage().scale(60, 60);
             addObject(s, Greenfoot.getRandomNumber(600), 20);
@@ -117,9 +118,9 @@ public class MyWorld extends World
                 putRepeater=false;
             }
         }
-        if(kd==(wave+1)*10){
+        if(zombieCount==(wave+1)*10){
             wave++;
-            kd=0;
+            zombieCount=0;
         }
         
         if(wave==3){
@@ -141,9 +142,7 @@ public class MyWorld extends World
     private void showScore(){
         showText("" + score, 30, 55);
     }
-    private void showKD(){
-        showText("Kills: "+kd,500,50);
-    }
+    
     
     private void showWave(){
         showText("Wave: " + (wave+1), 500, 25);
@@ -160,7 +159,5 @@ public class MyWorld extends World
     public void setRepeater(boolean x){
         putRepeater = x;
     }
-    public void increaseKill(int x){
-        kd = kd +x;
-    }
+    
     }

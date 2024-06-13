@@ -12,11 +12,16 @@ public class litRepeater extends Actor
      * Act - do whatever the litPeaflower wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    private int time=201;
-    private int cooldown=200;
+    private int time=301;
+    private int cooldown=300;
     public void act()
     {
         MyWorld world = (MyWorld)getWorld();
+        if(world.getScore()<200){
+            GreenfootImage i = new GreenfootImage("greyRepeater.png");
+            i.scale(55, 70);
+            setImage(i);
+        }
         if(Greenfoot.mouseClicked(this)&&world.getScore()>=200&&time>cooldown){
             
             world.addScore(-200);
