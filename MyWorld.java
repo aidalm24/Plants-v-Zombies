@@ -29,30 +29,38 @@ public class MyWorld extends World
         
         peaShooter p1 = new peaShooter();
         p1.getImage().scale(58, 58);
-        addObject(p1, 50, 200);
+        addObject(p1, 35, 245);
         
-        zombie z = new zombie();
-        z.getImage().scale(60, 80);
+<<<<<<< HEAD
+        // Cards
+        litSunflower sc = new litSunflower();
+        sc.getImage().scale(55, 70);
+        addObject(sc, 100, 27);
+        litPeashooter pc = new litPeashooter();
+        pc.getImage().scale(55, 70);
+        addObject(pc, 160, 27);
+=======
         
-        if(Greenfoot.getRandomNumber(100) < 80){
-            addObject(z, 580, Greenfoot.getRandomNumber(400));
-        }
+>>>>>>> parent of fe43f14 (sun, card, background, mechanics)
     }
     
     public void act()
     {
-        if (Greenfoot.getRandomNumber(100) < 1)
+        if (Greenfoot.getRandomNumber(500) < 4)
         {
+            int row = (int)Greenfoot.getRandomNumber(3);
             zombie z = new zombie();
             z.getImage().scale(60, 80);
         
-            addObject(z, 580, Greenfoot.getRandomNumber(400));
-        }
-        
-        if (Greenfoot.isKeyDown("space")) {
-            pea p = new pea();
-            p.getImage().scale(20, 20);
-            addObject(p, 50, 200);
+            if (row == 0) {
+                addObject(z, 580, 145);
+            }
+            if (row == 1) {
+                addObject(z, 580, 245);
+            }
+            if (row == 2) {
+                addObject(z, 580, 345);
+            }
         }
     }
     
@@ -62,7 +70,7 @@ public class MyWorld extends World
     }
     
     private void showScore(){
-        showText("Score: " + score, 80, 25);
+        showText("" + score, 30, 55);
     }
     
     private void showWave(){
